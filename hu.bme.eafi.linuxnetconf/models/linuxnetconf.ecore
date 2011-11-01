@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="linuxnetconf"
+    nsURI="http://linuxnetconf/1.0" nsPrefix="linuxnetconf">
+  <eClassifiers xsi:type="ecore:EClass" name="CMDB">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" lowerBound="1"
+        upperBound="-1" eType="#//ServerGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computers" upperBound="-1"
+        eType="#//ServerComputer" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServerGroup">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servers" upperBound="-1"
+        eType="#//ServerComputer" eOpposite="#//ServerComputer/group"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServerComputer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" eType="#//ServerGroup"
+        eOpposite="#//ServerGroup/servers"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="confitems" upperBound="-1"
+        eType="#//NetconfElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StaticIPConfig"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NetconfElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipconfig" eType="#//StaticIPConfig"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configType" eType="#//IFConfigType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EthernetInterface" eSuperTypes="#//VlanOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bondMaster" eType="#//BondingInterface"
+        eOpposite="#//BondingInterface/slaves"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BondingInterface" eSuperTypes="#//VlanOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slaves" lowerBound="1"
+        upperBound="-1" eType="#//EthernetInterface" eOpposite="#//EthernetInterface/bondMaster"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VlanInterface" eSuperTypes="#//Interface">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rawInterface" lowerBound="1"
+        eType="#//VlanOwner" eOpposite="#//VlanOwner/vlans"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bridge" eSuperTypes="#//NetconfElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bridgePorts" lowerBound="1"
+        upperBound="-1" eType="#//Interface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IFConfigType">
+    <eLiterals name="STATIC"/>
+    <eLiterals name="DYNAMIC" value="1"/>
+    <eLiterals name="MANUAL" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface" abstract="true" eSuperTypes="#//NetconfElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subinterfaces" upperBound="-1"
+        eType="#//SubInterface" eOpposite="#//SubInterface/mainInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubInterface" eSuperTypes="#//NetconfElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mainInterface" lowerBound="1"
+        eType="#//Interface" eOpposite="#//Interface/subinterfaces"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VlanOwner" abstract="true" eSuperTypes="#//Interface">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vlans" upperBound="-1"
+        eType="#//VlanInterface" eOpposite="#//VlanInterface/rawInterface"/>
+  </eClassifiers>
+</ecore:EPackage>
