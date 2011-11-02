@@ -28,6 +28,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -67,6 +68,7 @@ public class ServerComputerItemProvider
 			super.getPropertyDescriptors(object);
 
 			addGroupPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,6 +96,28 @@ public class ServerComputerItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServerComputer_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServerComputer_name_feature", "_UI_ServerComputer_type"),
+				 LinuxnetconfPackage.Literals.SERVER_COMPUTER__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -106,6 +130,7 @@ public class ServerComputerItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LinuxnetconfPackage.Literals.SERVER_COMPUTER__CONFITEMS);
+			childrenFeatures.add(LinuxnetconfPackage.Literals.SERVER_COMPUTER__IPCONFIGS);
 		}
 		return childrenFeatures;
 	}
@@ -142,7 +167,10 @@ public class ServerComputerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ServerComputer_type");
+		String label = ((ServerComputer)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ServerComputer_type") :
+			getString("_UI_ServerComputer_type") + " " + label;
 	}
 
 	/**
@@ -157,7 +185,11 @@ public class ServerComputerItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ServerComputer.class)) {
+			case LinuxnetconfPackage.SERVER_COMPUTER__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case LinuxnetconfPackage.SERVER_COMPUTER__CONFITEMS:
+			case LinuxnetconfPackage.SERVER_COMPUTER__IPCONFIGS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -199,6 +231,11 @@ public class ServerComputerItemProvider
 			(createChildParameter
 				(LinuxnetconfPackage.Literals.SERVER_COMPUTER__CONFITEMS,
 				 LinuxnetconfFactory.eINSTANCE.createSubInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LinuxnetconfPackage.Literals.SERVER_COMPUTER__IPCONFIGS,
+				 LinuxnetconfFactory.eINSTANCE.createStaticIPConfig()));
 	}
 
 	/**

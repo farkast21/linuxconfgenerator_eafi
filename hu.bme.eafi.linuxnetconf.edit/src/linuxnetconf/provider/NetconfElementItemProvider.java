@@ -10,8 +10,6 @@ package linuxnetconf.provider;
 import java.util.Collection;
 import java.util.List;
 
-import linuxnetconf.IFConfigType;
-import linuxnetconf.LinuxnetconfFactory;
 import linuxnetconf.LinuxnetconfPackage;
 import linuxnetconf.NetconfElement;
 
@@ -19,8 +17,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -68,9 +64,33 @@ public class NetconfElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIpconfigPropertyDescriptor(object);
 			addConfigTypePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Ipconfig feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIpconfigPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NetconfElement_ipconfig_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NetconfElement_ipconfig_feature", "_UI_NetconfElement_type"),
+				 LinuxnetconfPackage.Literals.NETCONF_ELEMENT__IPCONFIG,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -96,33 +116,25 @@ public class NetconfElementItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(LinuxnetconfPackage.Literals.NETCONF_ELEMENT__IPCONFIG);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NetconfElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NetconfElement_name_feature", "_UI_NetconfElement_type"),
+				 LinuxnetconfPackage.Literals.NETCONF_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -133,8 +145,7 @@ public class NetconfElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		IFConfigType labelValue = ((NetconfElement)object).getConfigType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((NetconfElement)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_NetconfElement_type") :
 			getString("_UI_NetconfElement_type") + " " + label;
@@ -153,10 +164,8 @@ public class NetconfElementItemProvider
 
 		switch (notification.getFeatureID(NetconfElement.class)) {
 			case LinuxnetconfPackage.NETCONF_ELEMENT__CONFIG_TYPE:
+			case LinuxnetconfPackage.NETCONF_ELEMENT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case LinuxnetconfPackage.NETCONF_ELEMENT__IPCONFIG:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -172,11 +181,6 @@ public class NetconfElementItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(LinuxnetconfPackage.Literals.NETCONF_ELEMENT__IPCONFIG,
-				 LinuxnetconfFactory.eINSTANCE.createStaticIPConfig()));
 	}
 
 	/**

@@ -10,9 +10,8 @@ package linuxnetconf.provider;
 import java.util.Collection;
 import java.util.List;
 
-import linuxnetconf.IFConfigType;
 import linuxnetconf.LinuxnetconfPackage;
-import linuxnetconf.VlanOwner;
+import linuxnetconf.PhysicalInterface;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -24,14 +23,16 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link linuxnetconf.VlanOwner} object.
+ * This is the item provider adapter for a {@link linuxnetconf.PhysicalInterface} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class VlanOwnerItemProvider
+public class PhysicalInterfaceItemProvider
 	extends InterfaceItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +46,7 @@ public class VlanOwnerItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VlanOwnerItemProvider(AdapterFactory adapterFactory) {
+	public PhysicalInterfaceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,6 +62,7 @@ public class VlanOwnerItemProvider
 			super.getPropertyDescriptors(object);
 
 			addVlansPropertyDescriptor(object);
+			addMacAddressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,13 +78,35 @@ public class VlanOwnerItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_VlanOwner_vlans_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VlanOwner_vlans_feature", "_UI_VlanOwner_type"),
-				 LinuxnetconfPackage.Literals.VLAN_OWNER__VLANS,
+				 getString("_UI_PhysicalInterface_vlans_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PhysicalInterface_vlans_feature", "_UI_PhysicalInterface_type"),
+				 LinuxnetconfPackage.Literals.PHYSICAL_INTERFACE__VLANS,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Mac Address feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMacAddressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PhysicalInterface_macAddress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PhysicalInterface_macAddress_feature", "_UI_PhysicalInterface_type"),
+				 LinuxnetconfPackage.Literals.PHYSICAL_INTERFACE__MAC_ADDRESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -95,11 +119,10 @@ public class VlanOwnerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		IFConfigType labelValue = ((VlanOwner)object).getConfigType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((PhysicalInterface)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_VlanOwner_type") :
-			getString("_UI_VlanOwner_type") + " " + label;
+			getString("_UI_PhysicalInterface_type") :
+			getString("_UI_PhysicalInterface_type") + " " + label;
 	}
 
 	/**
@@ -112,6 +135,12 @@ public class VlanOwnerItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(PhysicalInterface.class)) {
+			case LinuxnetconfPackage.PHYSICAL_INTERFACE__MAC_ADDRESS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -10,7 +10,6 @@ package linuxnetconf.provider;
 import java.util.Collection;
 import java.util.List;
 
-import linuxnetconf.IFConfigType;
 import linuxnetconf.LinuxnetconfPackage;
 import linuxnetconf.VlanInterface;
 
@@ -24,6 +23,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link linuxnetconf.VlanInterface} object.
@@ -61,6 +62,7 @@ public class VlanInterfaceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addRawInterfacePropertyDescriptor(object);
+			addVlanIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -88,6 +90,28 @@ public class VlanInterfaceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Vlan Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVlanIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_VlanInterface_vlanId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VlanInterface_vlanId_feature", "_UI_VlanInterface_type"),
+				 LinuxnetconfPackage.Literals.VLAN_INTERFACE__VLAN_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns VlanInterface.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,8 +130,7 @@ public class VlanInterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		IFConfigType labelValue = ((VlanInterface)object).getConfigType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((VlanInterface)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_VlanInterface_type") :
 			getString("_UI_VlanInterface_type") + " " + label;
@@ -123,6 +146,12 @@ public class VlanInterfaceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(VlanInterface.class)) {
+			case LinuxnetconfPackage.VLAN_INTERFACE__VLAN_ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

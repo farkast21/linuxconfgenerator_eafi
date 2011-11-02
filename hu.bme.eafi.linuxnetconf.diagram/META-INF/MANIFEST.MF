@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: linuxnetconf.diagram.part.LinuxnetconfDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: linuxnetconf.diagram.edit.parts, 
+Export-Package: linuxnetconf.diagram.edit.parts,
  linuxnetconf.diagram.part,
  linuxnetconf.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,

@@ -11,7 +11,6 @@ import java.util.Collection;
 import java.util.List;
 
 import linuxnetconf.EthernetInterface;
-import linuxnetconf.IFConfigType;
 import linuxnetconf.LinuxnetconfPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -32,7 +31,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class EthernetInterfaceItemProvider
-	extends VlanOwnerItemProvider
+	extends PhysicalInterfaceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -106,8 +105,7 @@ public class EthernetInterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		IFConfigType labelValue = ((EthernetInterface)object).getConfigType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((EthernetInterface)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_EthernetInterface_type") :
 			getString("_UI_EthernetInterface_type") + " " + label;

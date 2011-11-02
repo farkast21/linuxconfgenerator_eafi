@@ -11,7 +11,6 @@ import java.util.Collection;
 import java.util.List;
 
 import linuxnetconf.Bridge;
-import linuxnetconf.IFConfigType;
 import linuxnetconf.LinuxnetconfPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -106,8 +105,7 @@ public class BridgeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		IFConfigType labelValue = ((Bridge)object).getConfigType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Bridge)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Bridge_type") :
 			getString("_UI_Bridge_type") + " " + label;

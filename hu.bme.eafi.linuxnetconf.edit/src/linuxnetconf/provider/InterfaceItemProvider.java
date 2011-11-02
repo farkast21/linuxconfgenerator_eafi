@@ -10,7 +10,6 @@ package linuxnetconf.provider;
 import java.util.Collection;
 import java.util.List;
 
-import linuxnetconf.IFConfigType;
 import linuxnetconf.Interface;
 import linuxnetconf.LinuxnetconfPackage;
 
@@ -95,8 +94,7 @@ public class InterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		IFConfigType labelValue = ((Interface)object).getConfigType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Interface)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Interface_type") :
 			getString("_UI_Interface_type") + " " + label;

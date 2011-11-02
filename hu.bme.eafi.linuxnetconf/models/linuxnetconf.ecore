@@ -12,12 +12,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="ServerGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="servers" upperBound="-1"
         eType="#//ServerComputer" eOpposite="#//ServerComputer/group"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServerComputer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="group" eType="#//ServerGroup"
         eOpposite="#//ServerGroup/servers"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="confitems" upperBound="-1"
         eType="#//NetconfElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipconfigs" upperBound="-1"
+        eType="#//StaticIPConfig" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StaticIPConfig">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ipAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -27,8 +31,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="broadcast" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NetconfElement" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ipconfig" eType="#//StaticIPConfig"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipconfig" eType="#//StaticIPConfig"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configType" eType="#//IFConfigType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

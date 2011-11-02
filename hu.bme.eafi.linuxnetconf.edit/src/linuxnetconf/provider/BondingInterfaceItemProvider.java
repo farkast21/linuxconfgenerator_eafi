@@ -11,7 +11,6 @@ import java.util.Collection;
 import java.util.List;
 
 import linuxnetconf.BondingInterface;
-import linuxnetconf.IFConfigType;
 import linuxnetconf.LinuxnetconfPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -24,6 +23,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link linuxnetconf.BondingInterface} object.
@@ -32,7 +33,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class BondingInterfaceItemProvider
-	extends VlanOwnerItemProvider
+	extends PhysicalInterfaceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -61,6 +62,7 @@ public class BondingInterfaceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSlavesPropertyDescriptor(object);
+			addModePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -88,6 +90,28 @@ public class BondingInterfaceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Mode feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BondingInterface_mode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BondingInterface_mode_feature", "_UI_BondingInterface_type"),
+				 LinuxnetconfPackage.Literals.BONDING_INTERFACE__MODE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns BondingInterface.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,8 +130,7 @@ public class BondingInterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		IFConfigType labelValue = ((BondingInterface)object).getConfigType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((BondingInterface)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_BondingInterface_type") :
 			getString("_UI_BondingInterface_type") + " " + label;
@@ -123,6 +146,12 @@ public class BondingInterfaceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(BondingInterface.class)) {
+			case LinuxnetconfPackage.BONDING_INTERFACE__MODE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
