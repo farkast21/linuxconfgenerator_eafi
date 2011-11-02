@@ -51,6 +51,26 @@
   <children xmi:type="notation:Node" xmi:id="_sgHvYP9REeCw2_Sc3nT-0w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_sgI9gP9REeCw2_Sc3nT-0w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_sgJkkP9REeCw2_Sc3nT-0w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="__3s2UQVrEeG47ttMf-JFbA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//StaticIPConfig/ipAddress"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__3s2UgVrEeG47ttMf-JFbA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_LBbj0AVsEeG47ttMf-JFbA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//StaticIPConfig/netmask"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LBbj0QVsEeG47ttMf-JFbA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_YHs2gAVsEeG47ttMf-JFbA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//StaticIPConfig/networkAddress"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_YHs2gQVsEeG47ttMf-JFbA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_Pl5NgAVsEeG47ttMf-JFbA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//StaticIPConfig/gateway"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Pl5NgQVsEeG47ttMf-JFbA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_VUaPgAVsEeG47ttMf-JFbA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//StaticIPConfig/broadcast"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_VUaPgQVsEeG47ttMf-JFbA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_sgJkkf9REeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_sgJkkv9REeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_sgJkk_9REeCw2_Sc3nT-0w"/>
@@ -62,7 +82,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_sgHvYf9REeCw2_Sc3nT-0w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="linuxnetconf.ecore#//StaticIPConfig"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgHvYv9REeCw2_Sc3nT-0w" x="588" y="204"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgHvYv9REeCw2_Sc3nT-0w" x="624" y="132"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_xg2eUP9REeCw2_Sc3nT-0w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_xg3scP9REeCw2_Sc3nT-0w" type="4001"/>
