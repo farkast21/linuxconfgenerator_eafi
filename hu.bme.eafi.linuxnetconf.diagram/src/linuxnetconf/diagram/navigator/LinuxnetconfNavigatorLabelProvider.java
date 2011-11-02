@@ -91,36 +91,36 @@ public class LinuxnetconfNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (LinuxnetconfVisualIDRegistry.getVisualID(view)) {
-		case VlanInterfaceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://linuxnetconf/1.0?VlanInterface", LinuxnetconfElementTypes.VlanInterface_2004); //$NON-NLS-1$
-		case SubInterfaceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://linuxnetconf/1.0?SubInterface", LinuxnetconfElementTypes.SubInterface_2002); //$NON-NLS-1$
-		case BondingInterfaceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://linuxnetconf/1.0?BondingInterface", LinuxnetconfElementTypes.BondingInterface_2005); //$NON-NLS-1$
-		case EthernetInterfaceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://linuxnetconf/1.0?EthernetInterface", LinuxnetconfElementTypes.EthernetInterface_2003); //$NON-NLS-1$
-		case InterfaceSubinterfacesEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://linuxnetconf/1.0?Interface?subinterfaces", LinuxnetconfElementTypes.InterfaceSubinterfaces_4004); //$NON-NLS-1$
-		case ServerComputerEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http://linuxnetconf/1.0?ServerComputer", LinuxnetconfElementTypes.ServerComputer_1000); //$NON-NLS-1$
-		case BridgeBridgePortsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://linuxnetconf/1.0?Bridge?bridgePorts", LinuxnetconfElementTypes.BridgeBridgePorts_4002); //$NON-NLS-1$
 		case VlanOwnerVlansEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://linuxnetconf/1.0?VlanOwner?vlans", LinuxnetconfElementTypes.VlanOwnerVlans_4003); //$NON-NLS-1$
-		case BondingInterfaceSlavesEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://linuxnetconf/1.0?BondingInterface?slaves", LinuxnetconfElementTypes.BondingInterfaceSlaves_4001); //$NON-NLS-1$
 		case BridgeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://linuxnetconf/1.0?Bridge", LinuxnetconfElementTypes.Bridge_2001); //$NON-NLS-1$
+		case BondingInterfaceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://linuxnetconf/1.0?BondingInterface", LinuxnetconfElementTypes.BondingInterface_2005); //$NON-NLS-1$
+		case SubInterfaceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://linuxnetconf/1.0?SubInterface", LinuxnetconfElementTypes.SubInterface_2002); //$NON-NLS-1$
+		case VlanInterfaceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://linuxnetconf/1.0?VlanInterface", LinuxnetconfElementTypes.VlanInterface_2004); //$NON-NLS-1$
+		case InterfaceSubinterfacesEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://linuxnetconf/1.0?Interface?subinterfaces", LinuxnetconfElementTypes.InterfaceSubinterfaces_4004); //$NON-NLS-1$
+		case BridgeBridgePortsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://linuxnetconf/1.0?Bridge?bridgePorts", LinuxnetconfElementTypes.BridgeBridgePorts_4002); //$NON-NLS-1$
+		case BondingInterfaceSlavesEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://linuxnetconf/1.0?BondingInterface?slaves", LinuxnetconfElementTypes.BondingInterfaceSlaves_4001); //$NON-NLS-1$
+		case EthernetInterfaceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://linuxnetconf/1.0?EthernetInterface", LinuxnetconfElementTypes.EthernetInterface_2003); //$NON-NLS-1$
+		case ServerComputerEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http://linuxnetconf/1.0?ServerComputer", LinuxnetconfElementTypes.ServerComputer_1000); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -173,26 +173,26 @@ public class LinuxnetconfNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (LinuxnetconfVisualIDRegistry.getVisualID(view)) {
-		case VlanInterfaceEditPart.VISUAL_ID:
-			return getVlanInterface_2004Text(view);
-		case SubInterfaceEditPart.VISUAL_ID:
-			return getSubInterface_2002Text(view);
-		case BondingInterfaceEditPart.VISUAL_ID:
-			return getBondingInterface_2005Text(view);
-		case EthernetInterfaceEditPart.VISUAL_ID:
-			return getEthernetInterface_2003Text(view);
-		case InterfaceSubinterfacesEditPart.VISUAL_ID:
-			return getInterfaceSubinterfaces_4004Text(view);
-		case ServerComputerEditPart.VISUAL_ID:
-			return getServerComputer_1000Text(view);
-		case BridgeBridgePortsEditPart.VISUAL_ID:
-			return getBridgeBridgePorts_4002Text(view);
 		case VlanOwnerVlansEditPart.VISUAL_ID:
 			return getVlanOwnerVlans_4003Text(view);
-		case BondingInterfaceSlavesEditPart.VISUAL_ID:
-			return getBondingInterfaceSlaves_4001Text(view);
 		case BridgeEditPart.VISUAL_ID:
 			return getBridge_2001Text(view);
+		case BondingInterfaceEditPart.VISUAL_ID:
+			return getBondingInterface_2005Text(view);
+		case SubInterfaceEditPart.VISUAL_ID:
+			return getSubInterface_2002Text(view);
+		case VlanInterfaceEditPart.VISUAL_ID:
+			return getVlanInterface_2004Text(view);
+		case InterfaceSubinterfacesEditPart.VISUAL_ID:
+			return getInterfaceSubinterfaces_4004Text(view);
+		case BridgeBridgePortsEditPart.VISUAL_ID:
+			return getBridgeBridgePorts_4002Text(view);
+		case BondingInterfaceSlavesEditPart.VISUAL_ID:
+			return getBondingInterfaceSlaves_4001Text(view);
+		case EthernetInterfaceEditPart.VISUAL_ID:
+			return getEthernetInterface_2003Text(view);
+		case ServerComputerEditPart.VISUAL_ID:
+			return getServerComputer_1000Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -200,27 +200,20 @@ public class LinuxnetconfNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getVlanInterface_2004Text(View view) {
-		VlanInterface domainModelElement = (VlanInterface) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getConfigType());
-		} else {
-			LinuxnetconfDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 2004); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
+	private String getVlanOwnerVlans_4003Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**
 	 * @generated
 	 */
-	private String getSubInterface_2002Text(View view) {
-		SubInterface domainModelElement = (SubInterface) view.getElement();
+	private String getBridge_2001Text(View view) {
+		Bridge domainModelElement = (Bridge) view.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.getConfigType());
 		} else {
 			LinuxnetconfDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 2002); //$NON-NLS-1$
+					"No domain element for view with visualID = " + 2001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -243,6 +236,55 @@ public class LinuxnetconfNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
+	private String getSubInterface_2002Text(View view) {
+		SubInterface domainModelElement = (SubInterface) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getConfigType());
+		} else {
+			LinuxnetconfDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 2002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getVlanInterface_2004Text(View view) {
+		VlanInterface domainModelElement = (VlanInterface) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getConfigType());
+		} else {
+			LinuxnetconfDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 2004); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getInterfaceSubinterfaces_4004Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getBridgeBridgePorts_4002Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getBondingInterfaceSlaves_4001Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getEthernetInterface_2003Text(View view) {
 		EthernetInterface domainModelElement = (EthernetInterface) view
 				.getElement();
@@ -258,50 +300,8 @@ public class LinuxnetconfNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getInterfaceSubinterfaces_4004Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
 	private String getServerComputer_1000Text(View view) {
 		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getBridgeBridgePorts_4002Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getVlanOwnerVlans_4003Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getBondingInterfaceSlaves_4001Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getBridge_2001Text(View view) {
-		Bridge domainModelElement = (Bridge) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getConfigType());
-		} else {
-			LinuxnetconfDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 2001); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
 	}
 
 	/**

@@ -30,18 +30,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ipconfig" eType="#//StaticIPConfig"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configType" eType="#//IFConfigType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EthernetInterface" eSuperTypes="#//VlanOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="EthernetInterface" eSuperTypes="#//PhysicalInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bondMaster" eType="#//BondingInterface"
         eOpposite="#//BondingInterface/slaves"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BondingInterface" eSuperTypes="#//VlanOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="BondingInterface" eSuperTypes="#//PhysicalInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="slaves" lowerBound="1"
         upperBound="-1" eType="#//EthernetInterface" eOpposite="#//EthernetInterface/bondMaster"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" lowerBound="1" eType="#//BondMode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VlanInterface" eSuperTypes="#//Interface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rawInterface" lowerBound="1"
-        eType="#//VlanOwner" eOpposite="#//VlanOwner/vlans"/>
+        eType="#//PhysicalInterface" eOpposite="#//PhysicalInterface/vlans"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vlanId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bridge" eSuperTypes="#//NetconfElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bridgePorts" lowerBound="1"
@@ -60,8 +63,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mainInterface" lowerBound="1"
         eType="#//Interface" eOpposite="#//Interface/subinterfaces"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VlanOwner" abstract="true" eSuperTypes="#//Interface">
+  <eClassifiers xsi:type="ecore:EClass" name="PhysicalInterface" abstract="true" eSuperTypes="#//Interface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="vlans" upperBound="-1"
         eType="#//VlanInterface" eOpposite="#//VlanInterface/rawInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="macAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BondMode">
+    <eLiterals name="RoundRobin" literal="RR"/>
+    <eLiterals name="ActiveBackup" value="1" literal="AB"/>
   </eClassifiers>
 </ecore:EPackage>

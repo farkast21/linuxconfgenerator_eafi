@@ -136,7 +136,7 @@ public class VlanInterfaceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		return nodeShape; // use nodeShape itself as contentPane
+		return nodeShape; // use nodeShape	itself as contentPane
 	}
 
 	/**
@@ -250,10 +250,6 @@ public class VlanInterfaceEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureVlanInterfaceConfigTypeFigure;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureVlanInterfaceConfigTypeFigure;
 
 		/**
 		 * @generated
@@ -298,12 +294,7 @@ public class VlanInterfaceEditPart extends ShapeNodeEditPart {
 			return fFigureVlanInterfaceConfigTypeFigure;
 		}
 
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureVlanInterfaceConfigTypeFigure() {
-			return fFigureVlanInterfaceConfigTypeFigure;
-		}
+
 
 	}
 

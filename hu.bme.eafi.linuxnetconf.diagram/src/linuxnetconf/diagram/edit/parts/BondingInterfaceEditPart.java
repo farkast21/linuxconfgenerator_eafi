@@ -254,10 +254,7 @@ public class BondingInterfaceEditPart extends ShapeNodeEditPart {
 	 */
 	public class BondingInterfaceFigure extends RectangleFigure {
 
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureBondingInterfaceConfigTypeFigure;
+		
 		/**
 		 * @generated
 		 */
@@ -306,12 +303,7 @@ public class BondingInterfaceEditPart extends ShapeNodeEditPart {
 			return fFigureBondingInterfaceConfigTypeFigure;
 		}
 
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureBondingInterfaceConfigTypeFigure() {
-			return fFigureBondingInterfaceConfigTypeFigure;
-		}
+	
 
 	}
 

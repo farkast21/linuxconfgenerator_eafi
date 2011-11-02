@@ -255,10 +255,6 @@ public class EthernetInterfaceEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureEthernetInterfaceConfigTypeFigure;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureEthernetInterfaceConfigTypeFigure;
 
 		/**
 		 * @generated
@@ -303,12 +299,6 @@ public class EthernetInterfaceEditPart extends ShapeNodeEditPart {
 			return fFigureEthernetInterfaceConfigTypeFigure;
 		}
 
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureEthernetInterfaceConfigTypeFigure() {
-			return fFigureEthernetInterfaceConfigTypeFigure;
-		}
 
 	}
 

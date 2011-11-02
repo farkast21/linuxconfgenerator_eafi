@@ -215,10 +215,6 @@ public class SubInterfaceEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureSubInterfaceConfigTypeFigure;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureSubInterfaceConfigTypeFigure;
 
 		/**
 		 * @generated
@@ -235,6 +231,7 @@ public class SubInterfaceEditPart extends ShapeNodeEditPart {
 			layoutThis.setHorizontal(true);
 
 			this.setLayoutManager(layoutThis);
+	
 
 			createContents();
 		}
@@ -263,12 +260,7 @@ public class SubInterfaceEditPart extends ShapeNodeEditPart {
 			return fFigureSubInterfaceConfigTypeFigure;
 		}
 
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureSubInterfaceConfigTypeFigure() {
-			return fFigureSubInterfaceConfigTypeFigure;
-		}
+
 
 	}
 

@@ -234,10 +234,6 @@ public class BridgeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureBridgeConfigTypeFigure;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureBridgeConfigTypeFigure;
 
 		/**
 		 * @generated
@@ -282,12 +278,6 @@ public class BridgeEditPart extends ShapeNodeEditPart {
 			return fFigureBridgeConfigTypeFigure;
 		}
 
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureBridgeConfigTypeFigure() {
-			return fFigureBridgeConfigTypeFigure;
-		}
 
 	}
 

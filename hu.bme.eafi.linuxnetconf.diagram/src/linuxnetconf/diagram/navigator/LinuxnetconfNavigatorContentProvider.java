@@ -224,54 +224,54 @@ public class LinuxnetconfNavigatorContentProvider implements
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (LinuxnetconfVisualIDRegistry.getVisualID(view)) {
 
-		case VlanInterfaceEditPart.VISUAL_ID: {
+		case VlanOwnerVlansEditPart.VISUAL_ID: {
 			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			LinuxnetconfNavigatorGroup incominglinks = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_VlanInterface_2004_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			LinuxnetconfNavigatorGroup outgoinglinks = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_VlanInterface_2004_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Edge sv = (Edge) view;
+			LinuxnetconfNavigatorGroup target = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_VlanOwnerVlans_4003_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			LinuxnetconfNavigatorGroup source = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_VlanOwnerVlans_4003_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					LinuxnetconfVisualIDRegistry
-							.getType(BridgeBridgePortsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+							.getType(VlanInterfaceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					LinuxnetconfVisualIDRegistry
-							.getType(VlanOwnerVlansEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+							.getType(EthernetInterfaceEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					LinuxnetconfVisualIDRegistry
-							.getType(InterfaceSubinterfacesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
+							.getType(BondingInterfaceEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
 			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
+			if (!source.isEmpty()) {
+				result.add(source);
 			}
 			return result.toArray();
 		}
 
-		case SubInterfaceEditPart.VISUAL_ID: {
+		case BridgeEditPart.VISUAL_ID: {
 			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			LinuxnetconfNavigatorGroup incominglinks = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_SubInterface_2002_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			LinuxnetconfNavigatorGroup outgoinglinks = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_Bridge_2001_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					LinuxnetconfVisualIDRegistry
-							.getType(InterfaceSubinterfacesEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
+							.getType(BridgeBridgePortsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}
@@ -315,31 +315,44 @@ public class LinuxnetconfNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case EthernetInterfaceEditPart.VISUAL_ID: {
+		case SubInterfaceEditPart.VISUAL_ID: {
 			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			LinuxnetconfNavigatorGroup incominglinks = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_EthernetInterface_2003_incominglinks,
+					Messages.NavigatorGroupName_SubInterface_2002_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			LinuxnetconfNavigatorGroup outgoinglinks = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_EthernetInterface_2003_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					LinuxnetconfVisualIDRegistry
-							.getType(BondingInterfaceSlavesEditPart.VISUAL_ID));
+							.getType(InterfaceSubinterfacesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case VlanInterfaceEditPart.VISUAL_ID: {
+			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			LinuxnetconfNavigatorGroup incominglinks = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_VlanInterface_2004_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			LinuxnetconfNavigatorGroup outgoinglinks = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_VlanInterface_2004_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					LinuxnetconfVisualIDRegistry
 							.getType(BridgeBridgePortsEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					LinuxnetconfVisualIDRegistry
 							.getType(VlanOwnerVlansEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					LinuxnetconfVisualIDRegistry
 							.getType(InterfaceSubinterfacesEditPart.VISUAL_ID));
@@ -389,6 +402,113 @@ public class LinuxnetconfNavigatorContentProvider implements
 			}
 			if (!source.isEmpty()) {
 				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case BridgeBridgePortsEditPart.VISUAL_ID: {
+			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			LinuxnetconfNavigatorGroup target = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_BridgeBridgePorts_4002_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			LinuxnetconfNavigatorGroup source = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_BridgeBridgePorts_4002_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(EthernetInterfaceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(VlanInterfaceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(BondingInterfaceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(BridgeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case BondingInterfaceSlavesEditPart.VISUAL_ID: {
+			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			LinuxnetconfNavigatorGroup target = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_BondingInterfaceSlaves_4001_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			LinuxnetconfNavigatorGroup source = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_BondingInterfaceSlaves_4001_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(EthernetInterfaceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(BondingInterfaceEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case EthernetInterfaceEditPart.VISUAL_ID: {
+			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			LinuxnetconfNavigatorGroup incominglinks = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_EthernetInterface_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			LinuxnetconfNavigatorGroup outgoinglinks = new LinuxnetconfNavigatorGroup(
+					Messages.NavigatorGroupName_EthernetInterface_2003_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(BondingInterfaceSlavesEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(BridgeBridgePortsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(VlanOwnerVlansEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					LinuxnetconfVisualIDRegistry
+							.getType(InterfaceSubinterfacesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}
@@ -443,126 +563,6 @@ public class LinuxnetconfNavigatorContentProvider implements
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
-			}
-			return result.toArray();
-		}
-
-		case BridgeBridgePortsEditPart.VISUAL_ID: {
-			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			LinuxnetconfNavigatorGroup target = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_BridgeBridgePorts_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			LinuxnetconfNavigatorGroup source = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_BridgeBridgePorts_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(EthernetInterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(VlanInterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(BondingInterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(BridgeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case VlanOwnerVlansEditPart.VISUAL_ID: {
-			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			LinuxnetconfNavigatorGroup target = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_VlanOwnerVlans_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			LinuxnetconfNavigatorGroup source = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_VlanOwnerVlans_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(VlanInterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(EthernetInterfaceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(BondingInterfaceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case BondingInterfaceSlavesEditPart.VISUAL_ID: {
-			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			LinuxnetconfNavigatorGroup target = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_BondingInterfaceSlaves_4001_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			LinuxnetconfNavigatorGroup source = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_BondingInterfaceSlaves_4001_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(EthernetInterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(BondingInterfaceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case BridgeEditPart.VISUAL_ID: {
-			LinkedList<LinuxnetconfAbstractNavigatorItem> result = new LinkedList<LinuxnetconfAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			LinuxnetconfNavigatorGroup outgoinglinks = new LinuxnetconfNavigatorGroup(
-					Messages.NavigatorGroupName_Bridge_2001_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					LinuxnetconfVisualIDRegistry
-							.getType(BridgeBridgePortsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}

@@ -82,7 +82,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_sgHvYf9REeCw2_Sc3nT-0w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="linuxnetconf.ecore#//StaticIPConfig"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgHvYv9REeCw2_Sc3nT-0w" x="624" y="132"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgHvYv9REeCw2_Sc3nT-0w" x="528" y="120"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_xg2eUP9REeCw2_Sc3nT-0w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_xg3scP9REeCw2_Sc3nT-0w" type="4001"/>
@@ -90,6 +90,10 @@
       <children xmi:type="notation:Node" xmi:id="_d_SJ4P9WEeCw2_Sc3nT-0w" type="2001">
         <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//NetconfElement/configType"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_d_SJ4f9WEeCw2_Sc3nT-0w"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_po17kQV4EeGJr6xRnmOtrw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//NetconfElement/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_po17kgV4EeGJr6xRnmOtrw"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_xg4Tgf9REeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_xg4Tgv9REeCw2_Sc3nT-0w"/>
@@ -123,6 +127,10 @@
   <children xmi:type="notation:Node" xmi:id="_y0Fn0P9REeCw2_Sc3nT-0w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_y0G18P9REeCw2_Sc3nT-0w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_y0HdAP9REeCw2_Sc3nT-0w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_Dw8a8AV7EeGJr6xRnmOtrw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//BondingInterface/mode"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Dw8a8QV7EeGJr6xRnmOtrw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_y0HdAf9REeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_y0HdAv9REeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_y0HdA_9REeCw2_Sc3nT-0w"/>
@@ -139,6 +147,10 @@
   <children xmi:type="notation:Node" xmi:id="_zPZq0P9REeCw2_Sc3nT-0w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_zPa48P9REeCw2_Sc3nT-0w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_zPbgAP9REeCw2_Sc3nT-0w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_VkcuQAV6EeGJr6xRnmOtrw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//VlanInterface/vlanId"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_VkcuQQV6EeGJr6xRnmOtrw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_zPbgAf9REeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_zPbgAv9REeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zPbgA_9REeCw2_Sc3nT-0w"/>
@@ -189,7 +201,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_SwWJEf9SEeCw2_Sc3nT-0w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="linuxnetconf.ecore#//IFConfigType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SwWJEv9SEeCw2_Sc3nT-0w" x="593" y="26"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SwWJEv9SEeCw2_Sc3nT-0w" x="576" y="12"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_0_pHIP9WEeCw2_Sc3nT-0w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_0_puMP9WEeCw2_Sc3nT-0w" type="4001"/>
@@ -226,6 +238,10 @@
   <children xmi:type="notation:Node" xmi:id="_PQrqoP9aEeCw2_Sc3nT-0w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_PQsRsP9aEeCw2_Sc3nT-0w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_PQsRsf9aEeCw2_Sc3nT-0w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_q3WrMAV6EeGJr6xRnmOtrw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//PhysicalInterface/macAddress"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_q3WrMQV6EeGJr6xRnmOtrw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_PQsRsv9aEeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_PQsRs_9aEeCw2_Sc3nT-0w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_PQsRtP9aEeCw2_Sc3nT-0w"/>
@@ -236,8 +252,27 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_PQs4w_9aEeCw2_Sc3nT-0w"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_PQrqof9aEeCw2_Sc3nT-0w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="linuxnetconf.ecore#//VlanOwner"/>
+    <element xmi:type="ecore:EClass" href="linuxnetconf.ecore#//PhysicalInterface"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PQrqov9aEeCw2_Sc3nT-0w" x="300" y="360"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_0taKUAV6EeGJr6xRnmOtrw" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_0tbYcAV6EeGJr6xRnmOtrw" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_0tb_gAV6EeGJr6xRnmOtrw" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_3jzvsAV6EeGJr6xRnmOtrw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="linuxnetconf.ecore#//BondMode/ActiveBackup"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_3j0WwAV6EeGJr6xRnmOtrw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_2rm8YAV6EeGJr6xRnmOtrw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="linuxnetconf.ecore#//BondMode/RoundRobin"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2rm8YQV6EeGJr6xRnmOtrw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_0tb_gQV6EeGJr6xRnmOtrw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_0tb_ggV6EeGJr6xRnmOtrw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_0tb_gwV6EeGJr6xRnmOtrw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_0taKUQV6EeGJr6xRnmOtrw" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="linuxnetconf.ecore#//BondMode"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0taKUgV6EeGJr6xRnmOtrw" x="432" y="12"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_99SbwP9PEeCw2_Sc3nT-0w"/>
   <element xmi:type="ecore:EPackage" href="linuxnetconf.ecore#/"/>
@@ -394,7 +429,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_wrAMsP9XEeCw2_Sc3nT-0w" type="3002" source="_T5xdAP9XEeCw2_Sc3nT-0w" target="_0_pHIP9WEeCw2_Sc3nT-0w">
     <children xmi:type="notation:Node" xmi:id="_wrBa0P9XEeCw2_Sc3nT-0w" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_wrBa0f9XEeCw2_Sc3nT-0w" x="-47"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wrBa0f9XEeCw2_Sc3nT-0w" x="-68" y="37"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_wrCB4P9XEeCw2_Sc3nT-0w" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_wrCB4f9XEeCw2_Sc3nT-0w" x="10" y="10"/>
@@ -408,7 +443,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_xewk4P9XEeCw2_Sc3nT-0w" type="3002" source="_0_pHIP9WEeCw2_Sc3nT-0w" target="_T5xdAP9XEeCw2_Sc3nT-0w">
     <children xmi:type="notation:Node" xmi:id="_xexL8P9XEeCw2_Sc3nT-0w" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_xexL8f9XEeCw2_Sc3nT-0w" x="-17" y="-38"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_xexL8f9XEeCw2_Sc3nT-0w" x="-47" y="16"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_xexzAP9XEeCw2_Sc3nT-0w" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_xexzAf9XEeCw2_Sc3nT-0w" x="10" y="10"/>
@@ -450,7 +485,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_iXVLYf9aEeCw2_Sc3nT-0w" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_iXVLYv9aEeCw2_Sc3nT-0w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="linuxnetconf.ecore#//VlanOwner/vlans"/>
+    <element xmi:type="ecore:EReference" href="linuxnetconf.ecore#//PhysicalInterface/vlans"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iXVLY_9aEeCw2_Sc3nT-0w" points="[2, -5, -112, -5]$[99, 1, -15, 1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IIhfsP9bEeCw2_Sc3nT-0w" id="(0.9803921568627451,0.37209302325581395)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IIiGwP9bEeCw2_Sc3nT-0w" id="(0.14814814814814814,0.13953488372093023)"/>

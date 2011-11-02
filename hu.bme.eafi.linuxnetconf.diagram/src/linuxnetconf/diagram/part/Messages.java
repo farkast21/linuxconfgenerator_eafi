@@ -403,17 +403,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_VlanInterface_2004_incominglinks;
+	public static String NavigatorGroupName_VlanOwnerVlans_4003_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_VlanInterface_2004_outgoinglinks;
+	public static String NavigatorGroupName_VlanOwnerVlans_4003_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_SubInterface_2002_incominglinks;
+	public static String NavigatorGroupName_Bridge_2001_outgoinglinks;
 
 	/**
 	 * @generated
@@ -428,12 +428,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_EthernetInterface_2003_incominglinks;
+	public static String NavigatorGroupName_SubInterface_2002_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_EthernetInterface_2003_outgoinglinks;
+	public static String NavigatorGroupName_VlanInterface_2004_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_VlanInterface_2004_outgoinglinks;
 
 	/**
 	 * @generated
@@ -448,27 +453,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ServerComputer_1000_links;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_BridgeBridgePorts_4002_target;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_BridgeBridgePorts_4002_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_VlanOwnerVlans_4003_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_VlanOwnerVlans_4003_source;
 
 	/**
 	 * @generated
@@ -483,7 +473,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Bridge_2001_outgoinglinks;
+	public static String NavigatorGroupName_EthernetInterface_2003_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EthernetInterface_2003_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ServerComputer_1000_links;
 
 	/**
 	 * @generated
