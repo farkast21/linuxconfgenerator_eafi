@@ -1,0 +1,7 @@
+# Tracing options for the hu.bme.eafi.linuxnetconf.diagram plug-in
+
+# Common issues
+hu.bme.eafi.linuxnetconf.diagram/debug=false
+
+# Visual IDs
+hu.bme.eafi.linuxnetconf.diagram/debug/visualID=false
