@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_2WaRoST5EeGRtNF-UIhjkg" type="EcoreTools" name="linuxnetconf.ecorediag" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_2Wvo0CT5EeGRtNF-UIhjkg" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_2WyFECT5EeGRtNF-UIhjkg" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_2WysICT5EeGRtNF-UIhjkg" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_2WysIST5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2WysIiT5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2WysIyT5EeGRtNF-UIhjkg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_2WzTMCT5EeGRtNF-UIhjkg" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_2WzTMST5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2WzTMiT5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2WzTMyT5EeGRtNF-UIhjkg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_2Wvo0ST5EeGRtNF-UIhjkg" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="linuxnetconf.ecore#//CMDB"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2Wvo0iT5EeGRtNF-UIhjkg" x="36" y="276"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_2WzTNCT5EeGRtNF-UIhjkg" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_2Wz6QCT5EeGRtNF-UIhjkg" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_2Wz6QST5EeGRtNF-UIhjkg" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_2Wz6SST5EeGRtNF-UIhjkg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//ServerGroup/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2Wz6SiT5EeGRtNF-UIhjkg"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_2Wz6QiT5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2Wz6QyT5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2Wz6RCT5EeGRtNF-UIhjkg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_2Wz6RST5EeGRtNF-UIhjkg" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_2Wz6RiT5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2Wz6RyT5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2Wz6SCT5EeGRtNF-UIhjkg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_2WzTNST5EeGRtNF-UIhjkg" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="linuxnetconf.ecore#//ServerGroup"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2WzTNiT5EeGRtNF-UIhjkg" x="24" y="144"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_2W0hUCT5EeGRtNF-UIhjkg" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_2W0hUyT5EeGRtNF-UIhjkg" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_2W0hVCT5EeGRtNF-UIhjkg" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_2W1IZCT5EeGRtNF-UIhjkg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="linuxnetconf.ecore#//ServerComputer/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2W1IZST5EeGRtNF-UIhjkg"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_2W0hVST5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2W0hViT5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2W0hVyT5EeGRtNF-UIhjkg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_2W1IYCT5EeGRtNF-UIhjkg" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_2W1IYST5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2W1IYiT5EeGRtNF-UIhjkg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2W1IYyT5EeGRtNF-UIhjkg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_2W0hUST5EeGRtNF-UIhjkg" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="linuxnetconf.ecore#//ServerComputer"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2W0hUiT5EeGRtNF-UIhjkg" x="72" y="12"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_2WaRoiT5EeGRtNF-UIhjkg"/>
+  <element xmi:type="ecore:EPackage" href="linuxnetconf.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_2XB8sCT5EeGRtNF-UIhjkg" type="3002" source="_2Wvo0CT5EeGRtNF-UIhjkg" target="_2WzTNCT5EeGRtNF-UIhjkg">
+    <children xmi:type="notation:Node" xmi:id="_2XDK0CT5EeGRtNF-UIhjkg" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_2XDK0ST5EeGRtNF-UIhjkg" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_2XDK0iT5EeGRtNF-UIhjkg" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_2XDK0yT5EeGRtNF-UIhjkg" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_2XB8sST5EeGRtNF-UIhjkg" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_2XB8siT5EeGRtNF-UIhjkg" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="linuxnetconf.ecore#//CMDB/groups"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2XB8syT5EeGRtNF-UIhjkg" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2ZI1gCT5EeGRtNF-UIhjkg" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2ZI1gST5EeGRtNF-UIhjkg" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_2XDx6CT5EeGRtNF-UIhjkg" type="3002" source="_2WzTNCT5EeGRtNF-UIhjkg" target="_2W0hUCT5EeGRtNF-UIhjkg">
+    <children xmi:type="notation:Node" xmi:id="_2XEY8CT5EeGRtNF-UIhjkg" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_2XEY8ST5EeGRtNF-UIhjkg" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_2XEY8iT5EeGRtNF-UIhjkg" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_2XEY8yT5EeGRtNF-UIhjkg" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_2XDx6ST5EeGRtNF-UIhjkg" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_2XDx6iT5EeGRtNF-UIhjkg" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="linuxnetconf.ecore#//ServerGroup/servers"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2XDx6yT5EeGRtNF-UIhjkg" points="[0, 0, -48, 83]$[22, -48, -26, 35]$[48, -83, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TIv0kCT6EeGRtNF-UIhjkg" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TIv0kST6EeGRtNF-UIhjkg" id="(0.49606299212598426,1.0)"/>
+  </edges>
+</notation:Diagram>

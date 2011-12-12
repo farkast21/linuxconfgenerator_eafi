@@ -1,4 +1,7 @@
-#Tue Oct 25 23:26:14 CEST 2011
+#Mon Dec 12 21:10:15 CET 2011
 eclipse.preferences.version=1
+encoding//models/interfaceconnections.ecorediag=UTF-8
 encoding//models/linuxnetconf.ecore=UTF-8
-encoding//models/linuxnetconf.ecorediag=UTF-8
+encoding//models/topconfig.ecorediag=UTF-8
+encoding//models/toptree.ecorediag=UTF-8
+encoding//models/typehierarchy.ecorediag=UTF-8
