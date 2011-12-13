@@ -68,6 +68,19 @@
             </command>
          </toolbar>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:hu.bme.eafi.linuxnetconf.diagram.extra.views.GroupConfigTreeView">
+         <toolbar
+               id="hu.bme.eafi.linuxnetconf.diagram.extra.toolbars.sampleToolbar">
+            <command
+                  commandId="hu.bme.eafi.linuxnetconf.diagram.extra.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  id="hu.bme.eafi.linuxnetconf.diagram.extra.toolbars.sampleCommand"
+                  tooltip="Say hello world">
+            </command>
+         </toolbar>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.views">
